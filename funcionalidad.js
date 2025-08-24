@@ -1,15 +1,24 @@
 
 const agregarBtn = document.getElementById('agregar-btn');
 
-agregarBtn.addEventListener('click', agregar);
+agregarBtn.addEventListener('click', () => {
+    agregar()
+    borrar()
+});
 
 function agregar(){
     const pantalla = document.getElementById('nueva-tarea');
-    const lista = document.getElementById('lista-tareas')
-    const nuevaTarea = document.createElement('li')
+    const lista = document.getElementById('lista-tareas');
+    const nuevaTarea = document.createElement('li');
 
     nuevaTarea.addEventListener('click', () => nuevaTarea.remove())
-    nuevaTarea.textContent = pantalla.value
+    nuevaTarea.textContent = pantalla.value 
+    
+     
 
     lista.appendChild(nuevaTarea)
+
+}
+function borrar(){
+    document.getElementById('nueva-tarea').value = '';
 }
